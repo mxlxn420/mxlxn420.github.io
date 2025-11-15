@@ -82,6 +82,15 @@ html, body {
   font-size: clamp(0.9rem, 1.6vw, 1.1rem);
 }
 
+/* Táblázat nem elérhető cellák (szombat délutánok) */
+.foglalas td.unavailable {
+  background: #d32f2f;
+  color: #fff;
+  cursor: not-allowed;
+  pointer-events: none;
+  border: none;
+}
+
 /* Félkövér dátum oszlop minden eszközön */
 .foglalas td:first-child {
   font-weight: bold;
