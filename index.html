@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="hu" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varga Gumi & Autószerviz Szikszó | Professzionális Gumiszerviz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            yellow: '#FACC15', // Energikus sárga
+                            dark: '#111827',   // Éjfekete
+                            gray: '#1F2937'    // Sötétszürke kártyákhoz
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-brand-dark text-white antialiased selection:bg-brand-yellow selection:text-black">
+
+    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <span class="text-2xl font-extrabold tracking-tighter">Varga Gumi <span class="text-brand-yellow">& Autószerviz Szikszó</span></span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#szolgaltatasok" class="hover:text-brand-yellow transition-colors px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wide">Szolgáltatások</a>
+                        <a href="#kapcsolat" class="hover:text-brand-yellow transition-colors px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wide">Kapcsolat</a>
+                        <a href="tel:+36301234567" class="bg-brand-yellow text-black hover:bg-yellow-500 transition-colors px-5 py-2.5 rounded-full text-sm font-bold shadow-[0_0_15px_rgba(250,204,21,0.3)]">Hívás Most</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="relative pt-32 pb-20 sm:pt-40 sm:pb-24 overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 drop-shadow-lg">
+                Professzionális Gumiszerviz <br class="hidden md:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-yellow to-yellow-600">Szikszón</span>
+            </h1>
+            <p class="mt-4 max-w-2xl text-xl text-gray-300 mx-auto mb-10">
+                Gyorsaság, precizitás és modern géppark. Legyen szó szezonális gumicseréről, centírozásról vagy új abroncs beszerzéséről, ránk számíthatsz!
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#kapcsolat" class="bg-brand-yellow text-black hover:bg-yellow-500 transition-all transform hover:scale-105 px-8 py-4 rounded-full text-lg font-bold shadow-[0_0_20px_rgba(250,204,21,0.4)]">
+                    Időpontot Kérek
+                </a>
+                <a href="#szolgaltatasok" class="bg-brand-gray text-white border border-gray-700 hover:bg-gray-800 transition-all px-8 py-4 rounded-full text-lg font-bold">
+                    Szolgáltatások
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="szolgaltatasok" class="py-20 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold uppercase tracking-wide">Miben <span class="text-brand-yellow">segíthetünk?</span></h2>
+                <div class="w-24 h-1 bg-brand-yellow mx-auto mt-4 rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-brand-gray p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow transition-colors group">
+                    <div class="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">Gumiszerviz</h3>
+                    <p class="text-sm text-gray-400">Gyors és szakszerű téli/nyári gumicsere, modern gépparkkal és kíméletes leszereléssel.</p>
+                </div>
+
+                <div class="bg-brand-gray p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow transition-colors group">
+                    <div class="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">Centírozás</h3>
+                    <p class="text-sm text-gray-400">Hajszálpontos kerékkiegyensúlyozás a rázkódásmentes és biztonságos vezetésért.</p>
+                </div>
+
+                <div class="bg-brand-gray p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow transition-colors group">
+                    <div class="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">Új Abroncsok</h3>
+                    <p class="text-sm text-gray-400">Prémium és pénztárcabarát gumiabroncsok forgalmazása, azonnali szereléssel.</p>
+                </div>
+
+                <div class="bg-brand-gray p-6 rounded-2xl border border-gray-800 hover:border-brand-yellow transition-colors group">
+                    <div class="w-14 h-14 bg-gray-800 rounded-lg flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <svg class="w-8 h-8 text-brand-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-3">Futómű Állítás</h3>
+                    <p class="text-sm text-gray-400">Professzionális futómű-beállítás a tökéletes úttartásért és az abroncsok egyenletes kopásáért.</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-brand-yellow text-black py-16">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Ne várj a szezon végéig!</h2>
+            <p class="text-lg font-medium mb-8">Foglalj időpontot még ma, és kerüld el a sorban állást.</p>
+            <a href="tel:+36301234567" class="inline-block bg-black text-white hover:bg-gray-800 transition-colors px-10 py-4 rounded-full text-xl font-bold shadow-xl">
+                📞  (06 46) 796 692
+            </a>
+        </div>
+    </div>
+
+    <div id="foglalas" class="py-20 bg-black border-y border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extrabold uppercase tracking-wide">Foglalj <span class="text-brand-yellow">Időpontot</span></h2>
+                <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Válassz egy szabad időpontot a naptárból, és foglald le másodpercek alatt!</p>
+                <div class="w-24 h-1 bg-brand-yellow mx-auto mt-6 rounded"></div>
+            </div>
+
+            <div class="bg-brand-gray p-2 sm:p-4 rounded-2xl border border-gray-700 shadow-2xl max-w-4xl mx-auto">
+                
+                <div class="calendly-inline-widget" 
+                     data-url="https://calendly.com/milanmartis2007/szerviz-idopontfoglalas?hide_gdpr_banner=1&background_color=1F2937&text_color=ffffff&primary_color=FACC15" 
+                     style="min-width:320px;height:700px;">
+                </div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                </div>
+
+            <div class="mt-10 text-center">
+                <p class="text-gray-400 text-lg">Inkább telefonálnál? Hívj minket az azonnali egyeztetéshez!</p>
+                <a href="tel:+36301234567" class="inline-block mt-4 bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-full font-bold border border-gray-600 transition-colors shadow-lg">
+                    📞 (06 46) 796 692
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer id="kapcsolat" class="bg-black pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-12">
+                
+                <div>
+                    <span class="text-2xl font-extrabold tracking-tighter block mb-4">Varga Gumi <span class="text-brand-yellow">& Autószerviz Szikszó</span></span>
+                    <p class="text-gray-400 mb-4">Szikszó legmodernebb gumiszervize. Megbízhatóság és minőség, az Ön biztonságáért.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white uppercase">Nyitvatartás</h4>
+                    <ul class="text-gray-400 space-y-2">
+                        <li class="flex justify-between border-b border-gray-800 pb-2"><span>Hétfő - Péntek:</span> <span>07:00 - 17:00</span></li>
+                        <li class="flex justify-between border-b border-gray-800 pb-2"><span>Szombat:</span> <span>07:00 - 12:00</span></li>
+                        <li class="flex justify-between pb-2 text-brand-yellow"><span>Vasárnap:</span> <span>Zárva</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-white uppercase">Elérhetőség</h4>
+                    <ul class="text-gray-400 space-y-4">
+                        <li class="flex items-start">
+                            <span class="mr-3 text-brand-yellow">📍</span>
+                            <span>3800 Szikszó, <br> (Kassai út 52.)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-3 text-brand-yellow">📞</span>
+                            <a href="tel:+36301234567" class="hover:text-white transition">(06 46) 796 692</a>
+                        </li>
+                        <li class="flex items-center">
+                            <span class="mr-3 text-brand-yellow">✉️</span>
+                            <a href="mailto:info@vargagumi.hu" class="hover:text-white transition">vargagumiszervizszikszo@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-900 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Varga Gumi Szikszó. Minden jog fenntartva.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
