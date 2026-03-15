@@ -31,15 +31,32 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex-shrink-0">
-                    <span class="text-2xl font-extrabold tracking-tighter">Varga Gumi <span class="text-brand-yellow">& Autószerviz</span></span>
+                    <span class="text-2xl font-extrabold tracking-tighter">VARGA<span class="text-brand-yellow">GUMI</span></span>
                 </div>
+                
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#szolgaltatasok" class="hover:text-brand-yellow transition-colors px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wide">Szolgáltatások</a>
                         <a href="#kapcsolat" class="hover:text-brand-yellow transition-colors px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wide">Kapcsolat</a>
-                        <a href="tel:+36301234567" class="bg-brand-yellow text-black hover:bg-yellow-500 transition-colors px-5 py-2.5 rounded-full text-sm font-bold shadow-[0_0_15px_rgba(250,204,21,0.3)]">Hívás Most</a>
+                        <a href="tel:+3646796692" class="bg-brand-yellow text-black hover:bg-yellow-500 transition-colors px-5 py-2.5 rounded-full text-sm font-bold shadow-[0_0_15px_rgba(250,204,21,0.3)]">Hívás Most</a>
                     </div>
                 </div>
+
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-brand-yellow focus:outline-none">
+                        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden md:hidden bg-gray-900 border-b border-gray-800 shadow-2xl" id="mobile-menu">
+            <div class="px-2 pt-4 pb-6 space-y-2 text-center">
+                <a href="#szolgaltatasok" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-brand-yellow text-white block px-3 py-3 rounded-md text-base font-bold uppercase tracking-wide">Szolgáltatások</a>
+                <a href="#kapcsolat" onclick="document.getElementById('mobile-menu').classList.add('hidden')" class="hover:text-brand-yellow text-white block px-3 py-3 rounded-md text-base font-bold uppercase tracking-wide">Kapcsolat</a>
+                <a href="tel:+3646796692" class="mt-4 inline-block bg-brand-yellow text-black hover:bg-yellow-500 px-10 py-3 rounded-full text-base font-bold shadow-lg">📞 Hívás Most</a>
             </div>
         </div>
     </nav>
@@ -198,7 +215,6 @@
             
             <div class="border-t border-gray-900 pt-8 text-center text-gray-500 text-sm flex flex-col md:flex-row justify-between items-center">
                 <p>&copy; 2026 Varga Gumi & Autószerviz Szikszó. Minden jog fenntartva.</p>
-                <p class="mt-2 md:mt-0">Készült: Vibe Codinggal ⚡</p>
             </div>
         </div>
     </footer>
