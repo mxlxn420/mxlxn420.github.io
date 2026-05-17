@@ -666,12 +666,26 @@
     @media (max-width: 600px) {
       .hero-stats { gap:28px; }
       .form-row { grid-template-columns:1fr; }
-      .gallery { grid-template-columns:1fr; }
+      .gallery { grid-template-columns:1fr; grid-auto-rows:160px; }
       .hero-title { font-size:clamp(2.2rem,10vw,3.2rem); }
       .svc-pg-title { font-size:clamp(1.6rem,8vw,2.4rem); }
       .hero-pill { font-size:.68rem; padding:7px 14px; }
       .sp-list { padding:16px; }
       .btn { font-size:.85rem; padding:13px 22px; }
+      .section-pad { padding:40px 0; }
+      .contact-grid { gap:32px; }
+      .contact-info-list { margin-top:24px; gap:16px; }
+      .form-card { padding:24px 16px; border-radius:14px; }
+      .section-title { font-size:clamp(1.6rem,7vw,2.4rem); }
+      .cinfo-val { font-size:.85rem; word-break:break-word; }
+    }
+    @media (max-width: 400px) {
+      .container { padding:0 16px; }
+      .form-card { padding:20px 14px; }
+      .hero-inner { padding:32px 16px 48px; }
+      .footer-copy { font-size:.65rem; }
+      .back-btn { font-size:.78rem; }
+      .gallery { grid-auto-rows:130px; }
     }
     @keyframes spin { to { transform:rotate(360deg); } }
 
