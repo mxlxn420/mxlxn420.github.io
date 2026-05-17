@@ -321,13 +321,13 @@
     #page-rolunk { background:var(--white); position:relative; overflow:hidden; }
     #page-rolunk::before {
       content:''; position:absolute; inset:0;
-      background-image:radial-gradient(circle, rgba(232,168,32,.12) 1px, transparent 1px);
+      background-image:radial-gradient(circle, rgba(254,10,53,.10) 1px, transparent 1px);
       background-size:36px 36px; pointer-events:none;
     }
     #page-rolunk::after {
       content:''; position:absolute; top:-200px; right:-200px;
       width:700px; height:700px;
-      background:radial-gradient(circle, rgba(232,168,32,.09) 0%, transparent 65%);
+      background:radial-gradient(circle, rgba(254,10,53,.06) 0%, transparent 65%);
       pointer-events:none;
     }
     .hero-inner {
@@ -658,12 +658,20 @@
       .gallery-item:nth-child(5) { grid-row:span 1; }
       .contact-grid { grid-template-columns:1fr; gap:48px; }
       .form-card { padding:32px 24px; }
+      .svc-pg-top { padding:28px 0 36px; }
+      .sp-list { padding:20px; }
+      footer { padding:28px 20px; }
+      .footer-copy { font-size:.72rem; word-break:break-word; }
     }
     @media (max-width: 600px) {
       .hero-stats { gap:28px; }
       .form-row { grid-template-columns:1fr; }
       .gallery { grid-template-columns:1fr; }
-      .hero-title { font-size:clamp(2.6rem,11vw,3.8rem); }
+      .hero-title { font-size:clamp(2.2rem,10vw,3.2rem); }
+      .svc-pg-title { font-size:clamp(1.6rem,8vw,2.4rem); }
+      .hero-pill { font-size:.68rem; padding:7px 14px; }
+      .sp-list { padding:16px; }
+      .btn { font-size:.85rem; padding:13px 22px; }
     }
     @keyframes spin { to { transform:rotate(360deg); } }
 
@@ -1717,123 +1725,6 @@
   }
   initTypewriter();
 
-  // ─── 6. (canvas eltávolítva) ──────────────────────
-  // placeholder
-  (function() {
-    const canvas = document.getElementById('hero-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const RED  = '#FE0A35';
-    const GRID = 70;
-    let W, H, segs = [], nodes = [], particles = [];
-
-    function resize() {
-      const hero   = document.getElementById('page-rolunk');
-      const footer = hero.querySelector('footer');
-      W = canvas.width  = hero.offsetWidth  || window.innerWidth;
-      H = canvas.height = (hero.offsetHeight || window.innerHeight) - (footer ? footer.offsetHeight : 0);
-    }
-
-    function build() {
-      segs = []; nodes = []; particles = [];
-      const cols = Math.ceil(W / GRID) + 1;
-      const rows = Math.ceil(H / GRID) + 1;
-
-      // Csomópontok (rácsmetszések ~60%-a)
-      const grid = {};
-      for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-          if (Math.random() > 0.35) {
-            grid[`${r},${c}`] = { x: c * GRID, y: r * GRID };
-          }
-        }
-      }
-      nodes = Object.values(grid);
-
-      // Vízszintes vonalak
-      for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols - 1; c++) {
-          const a = grid[`${r},${c}`], b = grid[`${r},${c+1}`];
-          if (a && b && Math.random() > 0.25) segs.push([a, b]);
-        }
-      }
-      // Függőleges vonalak
-      for (let r = 0; r < rows - 1; r++) {
-        for (let c = 0; c < cols; c++) {
-          const a = grid[`${r},${c}`], b = grid[`${r+1},${c}`];
-          if (a && b && Math.random() > 0.25) segs.push([a, b]);
-        }
-      }
-
-      if (!segs.length) return;
-
-      // Mozgó részecskék
-      const count = Math.max(14, Math.floor(segs.length * 0.4));
-      for (let i = 0; i < count; i++) {
-        particles.push({
-          seg: segs[Math.floor(Math.random() * segs.length)],
-          t:   Math.random(),
-          spd: 0.007 + Math.random() * 0.010
-        });
-      }
-    }
-
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
-
-      // Vonalak
-      ctx.lineWidth = 1;
-      ctx.strokeStyle = 'rgba(254,10,53,0.13)';
-      segs.forEach(([a, b]) => {
-        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
-      });
-
-      // Csomópontok
-      nodes.forEach(n => {
-        ctx.beginPath(); ctx.arc(n.x, n.y, 2.5, 0, Math.PI*2);
-        ctx.fillStyle = 'rgba(254,10,53,0.22)'; ctx.fill();
-      });
-
-      // Részecskék
-      particles.forEach(p => {
-        p.t += p.spd;
-        if (p.t >= 1) { p.t = 0; p.seg = segs[Math.floor(Math.random() * segs.length)]; }
-
-        const [a, b] = p.seg;
-        const x  = a.x + (b.x - a.x) * p.t;
-        const y  = a.y + (b.y - a.y) * p.t;
-        const pt = Math.max(0, p.t - 0.12);
-        const px = a.x + (b.x - a.x) * pt;
-        const py = a.y + (b.y - a.y) * pt;
-
-        // Csóva
-        const trail = ctx.createLinearGradient(px, py, x, y);
-        trail.addColorStop(0, 'rgba(254,10,53,0)');
-        trail.addColorStop(1, 'rgba(254,10,53,0.7)');
-        ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(x, y);
-        ctx.strokeStyle = trail; ctx.lineWidth = 2.5; ctx.lineCap = 'round'; ctx.stroke();
-
-        // Glow
-        const g = ctx.createRadialGradient(x, y, 0, x, y, 20);
-        g.addColorStop(0,   'rgba(254,10,53,0.6)');
-        g.addColorStop(0.5, 'rgba(254,10,53,0.15)');
-        g.addColorStop(1,   'rgba(254,10,53,0)');
-        ctx.beginPath(); ctx.arc(x, y, 20, 0, Math.PI*2);
-        ctx.fillStyle = g; ctx.fill();
-
-        // Mag
-        ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI*2);
-        ctx.fillStyle = '#fff'; ctx.fill();
-        ctx.beginPath(); ctx.arc(x, y, 3.5, 0, Math.PI*2);
-        ctx.strokeStyle = RED; ctx.lineWidth = 1.5; ctx.stroke();
-      });
-
-      requestAnimationFrame(draw);
-    }
-
-    setTimeout(() => { resize(); build(); draw(); }, 200);
-    window.addEventListener('resize', () => { resize(); build(); }, { passive: true });
-  })();
 
   // ─── 7. PARALLAX HERO HÁTTÉR ──────────────────────
   window.addEventListener('scroll', () => {
